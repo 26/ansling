@@ -1,2 +1,2 @@
 # ansling
-Simple and consice string manipulation language
+Simple and concise string manipulation language
