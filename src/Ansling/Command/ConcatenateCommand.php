@@ -8,4 +8,9 @@ class ConcatenateCommand implements Command
     {
         return 2;
     }
+
+    public static function execute(string $a, string $b): string
+    {
+        return $a . $b;
+    }
 }
