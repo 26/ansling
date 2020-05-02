@@ -8,4 +8,9 @@ class ReverseCommand implements Command
     {
         return 1;
     }
+
+    public static function execute($input): string
+    {
+        return strrev($input);
+    }
 }
