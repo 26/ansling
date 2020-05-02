@@ -41,20 +41,6 @@ class Ansling
      */
     public function interpret(): string
     {
-        if (is_string($this->ast)) {
-            return self::formatString($this->ast);
-        }
-    }
-
-    /**
-     * @param string $input
-     * @return string
-     */
-    private static function formatString(string $input): string
-    {
-        return substr(strtr($input, [
-            '\\"' => '"',
-            '\\\\' => '\\'
-        ]), 1, -1);
+        return (new AnslingInterpreter())->interpret($this->ast);
     }
 }
