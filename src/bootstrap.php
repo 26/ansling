@@ -1,5 +1,7 @@
 <?php
 
+$start = microtime(true);
+
 error_reporting(1);
 
 if ($argc < 2) {
@@ -38,4 +40,5 @@ if (file_put_contents($output_path, (string)$result, LOCK_EX) === false) {
     exit;
 }
 
-echo sprintf("Done.\n");
+$duration = round(microtime(true) - $start, 3);
+echo sprintf("Done (%ss)\n", $duration);
