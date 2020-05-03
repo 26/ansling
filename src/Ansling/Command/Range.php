@@ -2,11 +2,11 @@
 
 namespace Ansling\Command;
 
-class StringSplit implements Command
+class Range implements Command
 {
-    public function execute(string $input, int $length): array
+    public static function execute(int $start, int $end): array
     {
-        return str_split($input, $length);
+        return range($start, $end);
     }
 
     /**
@@ -22,7 +22,7 @@ class StringSplit implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_STRING, self::TYPE_INT];
+        return [self::TYPE_INT, self::TYPE_INT];
     }
 
     /**

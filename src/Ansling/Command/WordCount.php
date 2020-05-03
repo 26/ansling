@@ -2,11 +2,11 @@
 
 namespace Ansling\Command;
 
-class StringSplit implements Command
+class WordCount implements Command
 {
-    public function execute(string $input, int $length): array
+    public static function execute(string $sentence): int
     {
-        return str_split($input, $length);
+        return str_word_count($sentence);
     }
 
     /**
@@ -14,7 +14,7 @@ class StringSplit implements Command
      */
     public static function getArity(): int
     {
-        return 2;
+        return 1;
     }
 
     /**
@@ -22,7 +22,7 @@ class StringSplit implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_STRING, self::TYPE_INT];
+        return [self::TYPE_STRING];
     }
 
     /**
@@ -30,6 +30,6 @@ class StringSplit implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_ARRAY;
+        return self::TYPE_INT;
     }
 }

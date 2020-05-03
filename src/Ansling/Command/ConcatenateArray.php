@@ -2,11 +2,13 @@
 
 namespace Ansling\Command;
 
-class StringSplit implements Command
+class ConcatenateArray implements Command
 {
-    public function execute(string $input, int $length): array
+    public static function execute(array $a, array $b): array
     {
-        return str_split($input, $length);
+        return array_map(function($a, $b) {
+            return $a . $b;
+        }, $a, $b);
     }
 
     /**
@@ -22,7 +24,7 @@ class StringSplit implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_STRING, self::TYPE_INT];
+        return [self::TYPE_ARRAY, self::TYPE_ARRAY];
     }
 
     /**
