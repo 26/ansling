@@ -5,7 +5,8 @@ namespace Ansling;
 final class AnslingParser
 {
     const STRING = 1;
-    const COMMAND = 2;
+    const INTEGER = 2;
+    const COMMAND = 3;
 
     /**
      * @var array Key-value list of the command as a string with its class
@@ -35,6 +36,7 @@ final class AnslingParser
 
         $index = 0;
         $tokens = self::tokenize($input);
+
         $ast = self::parseTokens($tokens, $index);
 
         if (count($tokens) > $index) {
@@ -68,7 +70,9 @@ final class AnslingParser
 
             if (preg_match('/^("(?:[^"\\\\]|\\\\.)*")/', $trim, $matches) === 1) {
                 $tokens[] = [$matches[1], self::STRING];
-            } else if (preg_match('/^([^\s]+)/', $trim, $matches) === 1) {
+            } else if (preg_match('/^([0-9]+)/', $trim, $matches) === 1) {
+                $tokens[] = [$matches[1], self::INTEGER];
+            } else if (preg_match('/^([^\s0-9]+)/', $trim, $matches) === 1) {
                 $tokens[] = [$matches[1], self::COMMAND];
             }
 
@@ -108,13 +112,17 @@ final class AnslingParser
             return $value;
         }
 
+        if ($type === self::INTEGER) {
+            return (int)$value;
+        }
+
         if (!isset($this->command_index[$value])) {
             throw new AnslingParseException(
                 sprintf(
                     "\n" .
                     "\e[0;34m-- UNRECOGNIZED COMMAND ------------------------------------------\e[0m\n" .
                     "\n" .
-                    "I did not understand the command `\e[0;32m%s\e[0m`. That's all I know.\n" .
+                    "I did not understand the command `\e[0;34m%s\e[0m`. That's all I know.\n" .
                     "\n" .
                     "\e[0;32mHint\e[0m: Check the available commands on `https://ansling.github.io`.\n" .
                     "\n", $value)
