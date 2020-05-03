@@ -23,6 +23,8 @@ class Ansling
         'count' => Command\Count::class,
         'fill' => Command\Fill::class,
         'flip' => Command\ReverseArray::class,
+        'if' => Command\IfNotEmpty::class,
+        'ifeq' => Command\IfEquals::class,
         'intval' => Command\IntegerValue::class,
         'join' => Command\Join::class,
         'length' => Command\Length::class,
