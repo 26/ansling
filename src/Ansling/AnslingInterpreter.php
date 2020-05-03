@@ -6,7 +6,7 @@ namespace Ansling;
  * Class AnslingInterpreter
  * @package Ansling
  */
-class AnslingInterpreter
+final class AnslingInterpreter
 {
     const STRING_ENCODINGS = ['\\"' => '"', '\\\\' => '\\'];
 
