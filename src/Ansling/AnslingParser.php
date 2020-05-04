@@ -46,7 +46,7 @@ final class AnslingParser
                 "\n" .
                 "The number of arguments supplied are more than I expected. That's all I know.\n" .
                 "\n" .
-                "\e[0;32mHint\e[0m: Check the parameters required for each command on `https://ansling.github.io`.\n" .
+                "\e[0;32mHint\e[0m: Check the parameters required for each command on `https://marijn.it/ansling/`.\n" .
                 "\n"
             );
         }
@@ -97,7 +97,7 @@ final class AnslingParser
                 "\n" .
                 "The number of arguments supplied are less than I expected. That's all I know.\n" .
                 "\n" .
-                "\e[0;32mHint\e[0m: Check the parameters required for each command on `https://ansling.github.io`.\n" .
+                "\e[0;32mHint\e[0m: Check the parameters required for each command on `https://marijn.it/ansling/`.\n" .
                 "\n"
             );
         }
@@ -124,7 +124,7 @@ final class AnslingParser
                     "\n" .
                     "I did not understand the command `\e[0;34m%s\e[0m`. That's all I know.\n" .
                     "\n" .
-                    "\e[0;32mHint\e[0m: Check the available commands on `https://ansling.github.io`.\n" .
+                    "\e[0;32mHint\e[0m: Check the available commands on `https://marijn.it/ansling/`.\n" .
                     "\n", $value)
             );
         }

@@ -21,7 +21,7 @@ Lets try entering `"foo" * 3`. It'll be `foofoofoo`, right?
 
    The number of arguments supplied are more than I expected. That's all I know.
 
-   Hint: Check the parameters required for each command on `https://ansling.github.io`.
+   Hint: Check the parameters required for each command on `https://marijn.it/ansling/`.
 
 What went wrong? Ansling does not use infix notation, like most languages. Instead, Ansling uses
 prefix notation. This means the operator, in this case `*`, goes before the operands. This

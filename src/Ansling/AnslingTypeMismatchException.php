@@ -19,7 +19,7 @@ class AnslingTypeMismatchException extends AnslingRuntimeException
             "\n" .
             "I expected argument \e[0;34m%d\e[0m passed to the command `\e[0;34m%s\e[0m` to be %s \e[0;32m%s\e[0m, but instead %s \e[0;31m%s\e[0m was given.\n" .
             "\n" .
-            "\e[0;32mHint\e[0m: Check the return type for each command on `https://ansling.github.io`.\n" .
+            "\e[0;32mHint\e[0m: Check the return type for each command on `https://marijn.it/ansling/`.\n" .
             "\n", $argument_number, $command, $expected_type_article, $expected, $found_type_article, $found
         ));
     }

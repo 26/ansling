@@ -17,7 +17,6 @@ Ansling.
    :caption: Variables
    :maxdepth: 2
 
-   what-are-variables
    variable-the-alphabet
    variable-linebreak
    variable-whitespace
@@ -28,18 +27,51 @@ Ansling.
 
 .. toctree::
    :caption: Commands
-   :maxdepth: 2
+   :maxdepth: 1
 
-   commands
+   replace
+   repeat
+   concatenate
+   concatenate-array
+   chunk
+   fill
+   flip
+   if
+   ifeq
+   intval
+   join
+   length
+   lower
+   lowerfirst
+   ltrim
+   ltrimo
+   pad
+   range
+   reverse
+   rtrim
+   rtrimo
+   sort
+   split
+   stringval
+   sub
+   tr
+   trim
+   trimo
+   upper
+   upperfirst
+   wc
+   wrap
 
 .. toctree::
    :caption: Examples
    :maxdepth: 2
 
-   examples
+   repeating-text
+   replacing-delimiter
+   99-bottles-of-beer
 
 .. toctree::
    :caption: Appendix
    :maxdepth: 2
 
-   appendix
+   list-of-commands

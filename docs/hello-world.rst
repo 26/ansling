@@ -5,7 +5,7 @@ A customary introduction to any programming language is the classic "Hello, Worl
 consists of printing the words "Hello, World!" to an output buffer. So without further ado, lets write our
 first program:
 
-.. code-block:: ansling
+.. code-block:: text
 
    "Hello, World!"
 
