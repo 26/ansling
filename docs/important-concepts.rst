@@ -38,9 +38,10 @@ Lets try that problem again:
 
    foofoofoo
 
+Great, that worked as expected.
+
 Arity
 -----
-
-
-
-
+The arity of a function is the number of arguments or operands a function takes. In most programming
+languages, functions may have a varying arity and doing so requires parenthesis. Ansling instead has
+a fixed number of arguments per command, allowing it to do away with parenthesis altogether.

@@ -1,4 +1,0 @@
-What is Ansling?
-================
-
-Ansling is a concise string manipulation language
