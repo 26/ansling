@@ -45,6 +45,8 @@ class Ansling
         'pad' => Command\Pad::class,
         'pad*' => Command\PadArray::class,
         'range' => Command\Range::class,
+        'regex' => Command\Regex::class,
+        'regex*' => Command\RegexArray::class,
         'reverse' => Command\Reverse::class,
         'reverse*' => Command\ReverseArray::class,
         'rtrim' => Command\RightTrim::class,
