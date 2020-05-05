@@ -5,7 +5,19 @@ $start = microtime(true);
 error_reporting(1);
 
 if ($argc < 2) {
-    echo "\e[1mansling: \e[1;31mfatal error: \e[0mno input given\n";
+    echo "\e[1mNAME\e[0m\n";
+    echo "  ansling - The Ansling String Manipulation Language Interpreter\n";
+    echo "\n";
+    echo "\e[1mSYNOPSIS\e[0m\n";
+    echo "  ansling [options]\n";
+    echo "\n";
+    echo "\e[1mOPTIONS\e[0m\n";
+    echo "  \e[1m-r=<code>\e[0m\n";
+    echo "      Interprets the specified code.\n";
+    echo "  \e[1m-i=<input>\e[0m\n";
+    echo "      Interprets the code in the specified input file.\n";
+    echo "  \e[1m-o=<output>\e[0m\n";
+    echo "      Writes the result to the specified output file.\n";
     exit;
 }
 
