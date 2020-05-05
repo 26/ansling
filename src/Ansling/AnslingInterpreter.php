@@ -74,9 +74,7 @@ final class AnslingInterpreter
      */
     private static function formatString(string $input): string
     {
-        return substr(strtr($input, [
-            self::STRING_ENCODINGS
-        ]), 1, -1);
+        return substr(strtr($input, self::STRING_ENCODINGS), 1, -1);
     }
 
     /**
