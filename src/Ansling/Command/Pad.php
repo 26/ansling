@@ -4,9 +4,9 @@ namespace Ansling\Command;
 
 class Pad implements Command
 {
-    public static function execute(string $input, int $length, string $padding): string
+    public static function execute(string $value, int $length, string $padding): string
     {
-        return str_pad($input, $length, $padding);
+        return str_pad($value, $length, $padding);
     }
 
     /**
@@ -30,6 +30,6 @@ class Pad implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_INT;
+        return self::TYPE_STRING;
     }
 }

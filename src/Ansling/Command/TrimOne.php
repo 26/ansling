@@ -4,17 +4,17 @@ namespace Ansling\Command;
 
 class TrimOne implements Command
 {
-    public function execute(string $input, string $mask): string
+    public function execute(string $value, string $mask): string
     {
-        if (in_array(mb_substr($input, 0, 1), str_split($mask))) {
-            $input = mb_substr($input, 1);
+        if (in_array(mb_substr($value, 0, 1), str_split($mask))) {
+            $value = mb_substr($value, 1);
         }
 
-        if (in_array(mb_substr($input, -1), str_split($mask))) {
-            $input = mb_substr($input, 0, -1);
+        if (in_array(mb_substr($value, -1), str_split($mask))) {
+            $value = mb_substr($value, 0, -1);
         }
 
-        return $input;
+        return $value;
     }
 
     /**

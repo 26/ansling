@@ -6,7 +6,7 @@ class IntegerValue implements Command
 {
     public function execute(string $value): int
     {
-        return (int)$value;
+        return intval($value);
     }
 
     /**

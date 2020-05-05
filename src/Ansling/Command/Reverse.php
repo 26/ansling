@@ -4,9 +4,9 @@ namespace Ansling\Command;
 
 class Reverse implements Command
 {
-    public static function execute(string $input): string
+    public static function execute(string $value): string
     {
-        return strrev($input);
+        return strrev($value);
     }
 
     /**

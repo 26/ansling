@@ -4,9 +4,11 @@ namespace Ansling\Command;
 
 class ReverseArray implements Command
 {
-    public static function execute(array $input): array
+    public static function execute(array $values): array
     {
-        return array_reverse($input);
+        return array_map(function(string $value): string {
+            return strrev($value);
+        }, $values);
     }
 
     /**

@@ -2,11 +2,13 @@
 
 namespace Ansling\Command;
 
-class SubString implements Command
+class IntegerValueArray implements Command
 {
-    public static function execute(string $value, int $start, int $length): string
+    public function execute(array $values): array
     {
-        return mb_substr($value, $start, $length);
+        return array_map(function(string $value): int {
+            return intval($value);
+        }, $values);
     }
 
     /**
@@ -14,7 +16,7 @@ class SubString implements Command
      */
     public static function getArity(): int
     {
-        return 3;
+        return 1;
     }
 
     /**
@@ -22,7 +24,7 @@ class SubString implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_STRING, self::TYPE_INT, self::TYPE_INT];
+        return [self::TYPE_ARRAY];
     }
 
     /**
@@ -30,6 +32,6 @@ class SubString implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_STRING;
+        return self::TYPE_ARRAY;
     }
 }

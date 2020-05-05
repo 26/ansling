@@ -2,11 +2,13 @@
 
 namespace Ansling\Command;
 
-class SubString implements Command
+class LowercaseFirstArray implements Command
 {
-    public static function execute(string $value, int $start, int $length): string
+    public static function execute(array $subjects): array
     {
-        return mb_substr($value, $start, $length);
+        return array_map(function(string $subject): string {
+            return lcfirst($subject);
+        }, $subjects);
     }
 
     /**
@@ -14,7 +16,7 @@ class SubString implements Command
      */
     public static function getArity(): int
     {
-        return 3;
+        return 1;
     }
 
     /**
@@ -22,7 +24,7 @@ class SubString implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_STRING, self::TYPE_INT, self::TYPE_INT];
+        return [self::TYPE_ARRAY];
     }
 
     /**
@@ -30,6 +32,6 @@ class SubString implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_STRING;
+        return self::TYPE_ARRAY;
     }
 }

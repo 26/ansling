@@ -4,9 +4,9 @@ namespace Ansling\Command;
 
 class Translate implements Command
 {
-    public function execute(string $input, array $from, array $to): string
+    public function execute(string $value, array $from, array $to): string
     {
-        return strtr($input, $from, $to);
+        return strtr($value, $from, $to);
     }
 
     /**
@@ -22,7 +22,7 @@ class Translate implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_STRING, self::TYPE_STRING, self::TYPE_STRING];
+        return [self::TYPE_STRING, self::TYPE_ARRAY, self::TYPE_ARRAY];
     }
 
     /**
