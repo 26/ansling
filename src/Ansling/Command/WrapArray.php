@@ -4,7 +4,7 @@ namespace Ansling\Command;
 
 class WrapArray implements Command
 {
-    public static function execute(array $values, int $width): array
+    public static function execute(array $values, array $width): array
     {
         return array_map(function(string $value, int $width): string {
             return wordwrap($value, $width);
@@ -24,7 +24,7 @@ class WrapArray implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_ARRAY, self::TYPE_INT];
+        return [self::TYPE_ARRAY, self::TYPE_ARRAY];
     }
 
     /**

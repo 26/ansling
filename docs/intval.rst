@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   intval `string` string : `int`
+   intval `string` string : `integer`
 
 `intval` returns the integer value of `string`.
 
