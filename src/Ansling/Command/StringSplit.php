@@ -2,11 +2,25 @@
 
 namespace Ansling\Command;
 
+use Ansling\AnslingRuntimeException;
+
 class StringSplit implements Command
 {
     public function execute(string $input, int $length): array
     {
-        return str_split($input, $length);
+        $result = str_split($input, $length);
+
+        if($result !== false) {
+            return $result;
+        }
+
+        throw new AnslingRuntimeException(sprintf(
+            "\n" .
+            "\e[0;34m-- INVALID VALUE -----------------------------------------------------------------------------------\e[0m\n" .
+            "\n" .
+            "I expected argument 2 passed to the command `\e[0;34mchunk\e[0m` to be greater than `0`.\n" .
+            "\n"
+        ));
     }
 
     /**

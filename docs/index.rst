@@ -30,37 +30,62 @@ Ansling.
    :maxdepth: 1
 
    replace
+   replace-array
    repeat
+   repeat-array
    concatenate
    concatenate-array
    chunk
    fill
+   fillint
    flip
    if
+   if-array
    ifeq
+   ifeq-array
    intval
+   intval-array
    join
    length
+   length-array
    lower
+   lower-array
    lowerfirst
+   lowerfirst-array
    ltrim
+   ltrim-array
    ltrimo
+   ltrimo-array
    pad
+   pad-array
    range
+   regex
+   regex-array
    reverse
+   reverse-array
    rtrim
+   rtrim-array
    rtrimo
+   rtrimo-array
    sort
    split
    stringval
+   stringval-array
    sub
+   sub-array
    tr
    trim
+   trim-array
    trimo
+   trimo-array
    upper
+   upper-array
    upperfirst
+   upperfirst-array
    wc
+   wc-array
    wrap
+   wrap-array
 
 .. toctree::
    :caption: Examples

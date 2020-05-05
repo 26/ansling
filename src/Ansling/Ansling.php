@@ -24,6 +24,7 @@ class Ansling
         'chunk' => Command\StringSplit::class,
         'count' => Command\Count::class,
         'fill' => Command\Fill::class,
+        'fillint' => Command\FillInt::class,
         'flip' => Command\FlipArray::class,
         'if' => Command\IfNotEmpty::class,
         'if*' => Command\IfNotEmptyArray::class,
