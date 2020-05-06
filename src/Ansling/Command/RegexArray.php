@@ -8,10 +8,10 @@ class RegexArray implements Command
 {
     /**
      * @param array $values
-     * @param array $regexes
+     * @param string $regex
      * @return array
      */
-    public static function execute(array $values, array $regexes): array
+    public static function execute(array $values, string $regex): array
     {
         return array_map(function(string $value, string $regex): string {
             if(preg_match($regex, $value, $matches) !== false) {
@@ -25,7 +25,7 @@ class RegexArray implements Command
                 "I expected argument 2 passed to the command `\e[0;34mregex*\e[0m` to contain valid regexes, but `\e[0;31m%s\e[0m` seems to not be valid.\n" .
                 "\n", $regex
             ));
-        }, $values, $regexes);
+        }, $values, array_fill(0, count($values), $regex));
     }
 
     /**
@@ -41,7 +41,7 @@ class RegexArray implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_ARRAY, self::TYPE_ARRAY];
+        return [self::TYPE_STRING_ARRAY, self::TYPE_STRING];
     }
 
     /**
@@ -49,6 +49,6 @@ class RegexArray implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_ARRAY;
+        return self::TYPE_STRING_ARRAY;
     }
 }

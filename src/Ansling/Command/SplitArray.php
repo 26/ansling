@@ -2,11 +2,13 @@
 
 namespace Ansling\Command;
 
-class Join implements Command
+class SplitArray implements Command
 {
-    public static function execute(string $glue, array $haystack): string
+    public static function execute(string $delimiter, array $haystack): array
     {
-        return implode($glue, $haystack);
+        return array_map(function(string $delimiter, string $haystack) {
+            return explode($delimiter, $haystack);
+        }, array_fill(0, count($haystack), $delimiter), $haystack);
     }
 
     /**
@@ -30,6 +32,6 @@ class Join implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_STRING;
+        return self::TYPE_STRING_ARRAY_ARRAY;
     }
 }

@@ -29,7 +29,7 @@ class ReplaceArray implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_ARRAY, self::TYPE_ARRAY, self::TYPE_ARRAY];
+        return [self::TYPE_STRING_ARRAY, self::TYPE_STRING_ARRAY, self::TYPE_STRING_ARRAY];
     }
 
     /**
@@ -39,6 +39,6 @@ class ReplaceArray implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_ARRAY;
+        return self::TYPE_STRING_ARRAY;
     }
 }

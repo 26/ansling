@@ -24,7 +24,7 @@ class UppercaseArray implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_ARRAY];
+        return [self::TYPE_STRING_ARRAY];
     }
 
     /**
@@ -32,6 +32,6 @@ class UppercaseArray implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_ARRAY;
+        return self::TYPE_STRING_ARRAY;
     }
 }

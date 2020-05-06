@@ -4,11 +4,11 @@ namespace Ansling\Command;
 
 class PadArray implements Command
 {
-    public static function execute(array $values, array $lengths, array $paddings): array
+    public static function execute(array $values, int $length, string $padding): array
     {
         return array_map(function(string $value, int $length, string $padding): string {
             return str_pad($value, $length, $padding);
-        }, $values, $lengths, $paddings);
+        }, $values, array_fill(0, count($values), $length), array_fill(0, count($values), $padding));
     }
 
     /**
@@ -24,7 +24,7 @@ class PadArray implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_ARRAY, self::TYPE_ARRAY, self::TYPE_ARRAY];
+        return [self::TYPE_STRING_ARRAY, self::TYPE_INT, self::TYPE_STRING];
     }
 
     /**
@@ -32,6 +32,6 @@ class PadArray implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_ARRAY;
+        return self::TYPE_STRING_ARRAY;
     }
 }

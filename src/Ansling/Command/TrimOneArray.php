@@ -4,7 +4,7 @@ namespace Ansling\Command;
 
 class TrimOneArray implements Command
 {
-    public function execute(array $values, array $masks): array
+    public function execute(array $values, string $mask): array
     {
         return array_map(function(string $value, string $mask): string {
             if (in_array(mb_substr($value, 0, 1), str_split($mask))) {
@@ -16,7 +16,7 @@ class TrimOneArray implements Command
             }
 
             return $value;
-        }, $values, $masks);
+        }, $values, array_fill(0, count($values), $mask));
     }
 
     /**
@@ -32,7 +32,7 @@ class TrimOneArray implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_ARRAY, self::TYPE_ARRAY];
+        return [self::TYPE_STRING_ARRAY, self::TYPE_STRING];
     }
 
     /**
@@ -40,6 +40,6 @@ class TrimOneArray implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_ARRAY;
+        return self::TYPE_STRING_ARRAY;
     }
 }

@@ -22,7 +22,7 @@ class Count implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_ARRAY];
+        return [self::TYPE_MIXED_ARRAY];
     }
 
     /**

@@ -4,11 +4,11 @@ namespace Ansling\Command;
 
 class TrimArray implements Command
 {
-    public static function execute(array $input, array $mask): array
+    public static function execute(array $input, string $mask): array
     {
         return array_map(function(string $input, string $mask): string {
             return trim($input, $mask);
-        }, $input, $mask);
+        }, $input, array_fill(0, count($input), $mask));
     }
 
     /**
@@ -24,7 +24,7 @@ class TrimArray implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_ARRAY, self::TYPE_ARRAY];
+        return [self::TYPE_STRING_ARRAY, self::TYPE_STRING];
     }
 
     /**
@@ -32,6 +32,6 @@ class TrimArray implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_ARRAY;
+        return self::TYPE_STRING_ARRAY;
     }
 }

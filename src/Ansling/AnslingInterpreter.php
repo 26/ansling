@@ -40,7 +40,8 @@ final class AnslingInterpreter
     private function interpretNode($node, string $expected_return_type)
     {
         $return_type = self::getReturnType($node);
-        if ($expected_return_type !== Command\Command::TYPE_MIXED && $expected_return_type !== $return_type) {
+
+        if (!self::areTypesEqualOrCoercible($expected_return_type, $return_type)) {
             throw new AnslingAbstractTypeMismatchException($expected_return_type, $return_type);
         }
 
@@ -66,6 +67,37 @@ final class AnslingInterpreter
         }
 
         return call_user_func_array([$command, 'execute'], $arguments);
+    }
+
+    private static function areTypesEqualOrCoercible(string $expected_return_type, string $actual_return_type): bool
+    {
+        switch ($expected_return_type) {
+            case Command\Command::TYPE_MIXED:
+                return true;
+            case Command\Command::TYPE_MIXED_ARRAY:
+                switch ($actual_return_type) {
+                    case Command\Command::TYPE_STRING_ARRAY:
+                    case Command\Command::TYPE_INTEGER_ARRAY:
+                    case Command\Command::TYPE_MIXED_ARRAY:
+                    case Command\Command::TYPE_STRING_ARRAY_ARRAY:
+                    case Command\Command::TYPE_INTEGER_ARRAY_ARRAY:
+                    case Command\Command::TYPE_MIXED_ARRAY_ARRAY:
+                        return true;
+                }
+
+                return false;
+            case Command\Command::TYPE_MIXED_ARRAY_ARRAY:
+                switch ($actual_return_type) {
+                    case Command\Command::TYPE_STRING_ARRAY_ARRAY:
+                    case Command\Command::TYPE_INTEGER_ARRAY_ARRAY:
+                    case Command\Command::TYPE_MIXED_ARRAY_ARRAY:
+                        return true;
+                }
+
+                return false;
+        }
+
+        return $expected_return_type === $actual_return_type;
     }
 
     /**

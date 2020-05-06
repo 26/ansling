@@ -2,13 +2,13 @@
 
 namespace Ansling\Command;
 
-class LowercaseArray implements Command
+class CountArray implements Command
 {
-    public static function execute(array $subjects): array
+    public static function execute(array $array): array
     {
-        return array_map(function(string $subject): string {
-            return mb_strtolower($subject);
-        }, $subjects);
+        return array_map(function(array $array): int {
+            return count($array);
+        }, $array);
     }
 
     /**
@@ -24,7 +24,7 @@ class LowercaseArray implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_STRING_ARRAY];
+        return [self::TYPE_MIXED_ARRAY_ARRAY];
     }
 
     /**
@@ -32,6 +32,6 @@ class LowercaseArray implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_STRING_ARRAY;
+        return self::TYPE_INTEGER_ARRAY;
     }
 }

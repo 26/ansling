@@ -4,11 +4,11 @@ namespace Ansling\Command;
 
 class RepeatArray implements Command
 {
-    public static function execute(array $inputs, array $multiplier): array
+    public static function execute(array $inputs, int $multiplier): array
     {
         return array_map(function(string $input, int $multiplier): string {
             return str_repeat($input, $multiplier);
-        }, $inputs, $multiplier);
+        }, $inputs, array_fill(0, count($inputs), $multiplier));
     }
 
     /**
@@ -29,7 +29,7 @@ class RepeatArray implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_ARRAY, self::TYPE_ARRAY];
+        return [self::TYPE_STRING_ARRAY, self::TYPE_INT];
     }
 
     /**
@@ -39,6 +39,6 @@ class RepeatArray implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_ARRAY;
+        return self::TYPE_STRING_ARRAY;
     }
 }

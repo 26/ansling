@@ -6,9 +6,9 @@ use Ansling\AnslingRuntimeException;
 
 class StringSplit implements Command
 {
-    public function execute(string $input, int $length): array
+    public function execute(string $value, int $length): array
     {
-        $result = str_split($input, $length);
+        $result = str_split($value, $length);
 
         if($result !== false) {
             return $result;
@@ -44,6 +44,6 @@ class StringSplit implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_ARRAY;
+        return self::TYPE_STRING_ARRAY;
     }
 }
