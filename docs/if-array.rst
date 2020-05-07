@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   if* `array` tests, `array` not-empty, `array` empty : `array`
+   if* `string array` tests, `string array` not-empty, `string array` empty : `string array`
 
 `if*` evaluates each element of `tests` and determines whether it is empty. It returns the
 corresponding element of `not-empty` if it is not empty, else it returns the corresponding element

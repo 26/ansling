@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   intval* `array` strings : `array`
+   intval* `string array` strings : `integer array`
 
 `intval*` returns the integer value of each element in `strings` and returns the result as an
 array.

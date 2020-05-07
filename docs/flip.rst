@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   flip `array` array : `string`
+   flip `mixed array` array : `string`
 
 `flip` reverses the order of the elements of `array` and returns the result as an array.
 

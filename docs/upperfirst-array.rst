@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   upperfirst* `array` values : `array`
+   upperfirst* `string array` values : `string array`
 
 `upperfirst*` converts for each element its first character to uppercase and returns the result
 as an array.

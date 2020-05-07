@@ -9,7 +9,7 @@ Description
 
 .. code-block:: text
 
-   ifeq* `array` a, `array` b, `array` identical, `array` not-identical : `array`
+   ifeq* `string array` a, `string array` b, `array` identical, `string array` not-identical : `string array`
 
 `ifeq` compares every element of `a` to the corresponding element of `b`, and returns
 the string in the corresponding element in `identical` if they are identical, else it

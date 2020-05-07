@@ -8,10 +8,9 @@ Description
 
 .. code-block:: text
 
-   ** `array` inputs, `array` multipliers : `array`
+   ** `string array` inputs, `int` multiplier : `string array`
 
-This command repeats the first element of `input` the number of times given in the first element
-of `multiplier` and does this for each element. It returns each result as an array.
+This command repeats each element of `inputs` `multiplier` times and returns the result as an array.
 
 Parameters
 ----------
@@ -20,6 +19,11 @@ inputs
 ******
 
 Array of strings that will be repeated.
+
+multiplier
+**********
+
+The multiplier.
 
 Examples
 --------

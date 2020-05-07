@@ -115,10 +115,17 @@ final class AnslingInterpreter
      */
     private static function formatArray(array $input): string
     {
-        $items = [];
-        foreach ($input as $item) {
-            $items[] = is_string($item) ? sprintf('"%s"', strtr($item, array_reverse(self::STRING_ENCODINGS))) : sprintf('%s', $item);
-        }
+        $items = array_map(function($item): string {
+            if (is_string($item)) {
+                return sprintf('"%s"', strtr($item, array_reverse(self::STRING_ENCODINGS)));
+            }
+
+            if (is_array($item)) {
+                return self::formatArray($item);
+            }
+
+            return sprintf('%s', $item);
+        }, $input);
 
         return sprintf("[%s]", implode(', ', $items));
     }

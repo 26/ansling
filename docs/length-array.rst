@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   length* `array` values : `array`
+   length* `string array` values : `integer array`
 
 `length*` returns the length of each element in values as an array.
 

@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   . `array` a, `array` b : `array`
+   . `string array` a, `string array` b : `string array`
 
 This command concatenates each element of `a` with each element of `b` resulting in `ab`. It returns
 the results as an array.

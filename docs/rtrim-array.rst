@@ -8,9 +8,9 @@ Description
 
 .. code-block:: text
 
-   rtrim* `array` values, `array` masks : `array`
+   rtrim* `string array` values, `string` mask : `string array`
 
-`rtrim*` strips from the end of each element in `values` the characters in the corresponding element in `masks`,
+`rtrim*` strips from the end of each element in `values` the characters in `mask`,
 and returns the results as an array.
 
 Parameters
@@ -21,10 +21,10 @@ values
 
 The input strings.
 
-masks
+mask
 *****
 
-Strings containing the characters that have to be stripped.
+String containing the characters that have to be stripped.
 
 Examples
 --------

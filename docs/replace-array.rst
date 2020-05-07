@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   $* `array` searches, `array` replaces, `array` subjects : `array`
+   $* `string array` searches, `string array` replaces, `string array` subjects : `string array`
 
 This command replaces all occurrences of the first element of `searches` in the first element of `subjects` with
 the first element of `replaces`, and does this for all elements in each array. It returns each result as an

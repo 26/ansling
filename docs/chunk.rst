@@ -8,10 +8,10 @@ Description
 
 .. code-block:: text
 
-   chunk `string` value, `int` length : `array`
+   chunk `string` value, `int` length : `string array`
 
 This command splits the string `value` into chunks of the given `length` and returns
-the result as an `array`.
+the result as a `string array`.
 
 Parameters
 ----------

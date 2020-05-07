@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   lower* `array` values : `array`
+   lower* `string array` values : `string array`
 
 `lower*` converts each element to lowercase and returns the result
 as an array.

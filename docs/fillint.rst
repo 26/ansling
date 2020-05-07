@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   fill `integer` number, `integer` value : `string`
+   fill `integer` number, `integer` value : `string array`
 
 Fills an array with `number` of entries of the integer in `value` and returns the result as
 an array.
