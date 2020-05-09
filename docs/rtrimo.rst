@@ -1,28 +1,26 @@
-ltrim
-=====
+rtrimo
+======
 
-`ltrim` strips given characters from the beginning of a string.
+`rtrimo` strips one of the given characters from the end of a string.
 
 Description
 -----------
 
 .. code-block:: text
 
-   ltrim `string` value, `string` mask : `string`
+   rtrimo `string` value, `string` mask : `string`
 
-`ltrim` strips the characters in `mask` from the beginning of `value` and returns the result.
+`rtrimo` strips one of the characters in `mask` from the end of `value` and returns the result.
 
 Parameters
 ----------
 
 value
 *****
-
 The input string.
 
 mask
 ****
-
 String containing the characters that have to be stripped.
 
 Examples
@@ -33,16 +31,16 @@ Examples
 
 .. code-block:: text
 
-   ltrim "fffoobar" "f"
+   rtrimo "foobarrr" "r"
 
    Result:
 
-   oobar
+   foobarr
 
 .. code-block:: text
 
-   trim "abcdefg" "a..d"
+   rtrimo "foobar" "ar"
 
    Result:
 
-   efg
+   fooba

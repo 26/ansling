@@ -44,7 +44,7 @@ final class AnslingParser
                 "\n" .
                 "\e[0;34m-- TOO MANY ARGUMENTS --------------------------------------------------------------\e[0m\n" .
                 "\n" .
-                "The number of arguments supplied are more than I expected. That's all I know.\n" .
+                "The number of arguments supplied is more than I expected. That's all I know.\n" .
                 "\n" .
                 "\e[0;32mHint\e[0m: Check the parameters required for each command on `https://marijn.it/ansling/`.\n" .
                 "\n"
@@ -70,7 +70,7 @@ final class AnslingParser
 
             if (preg_match('/^("(?:[^"\\\\]|\\\\.)*")/', $trim, $matches) === 1) {
                 $tokens[] = [$matches[1], self::STRING];
-            } else if (preg_match('/^([0-9]+)/', $trim, $matches) === 1) {
+            } else if (preg_match('/^(-?[0-9]+)/', $trim, $matches) === 1) {
                 $tokens[] = [$matches[1], self::INTEGER];
             } else if (preg_match('/^([^\s0-9]+)/', $trim, $matches) === 1) {
                 $tokens[] = [$matches[1], self::COMMAND];
@@ -95,7 +95,7 @@ final class AnslingParser
                 "\n" .
                 "\e[0;34m-- TOO FEW ARGUMENTS ---------------------------------------------------------------\e[0m\n" .
                 "\n" .
-                "The number of arguments supplied are less than I expected. That's all I know.\n" .
+                "The number of arguments supplied is less than I expected. That's all I know.\n" .
                 "\n" .
                 "\e[0;32mHint\e[0m: Check the parameters required for each command on `https://marijn.it/ansling/`.\n" .
                 "\n"

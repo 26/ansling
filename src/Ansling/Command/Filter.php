@@ -2,11 +2,11 @@
 
 namespace Ansling\Command;
 
-class SubString implements Command
+class Filter implements Command
 {
-    public static function execute(string $value, int $start, int $length): string
+    public static function execute(array $array, string $pattern): array
     {
-        return (string)mb_substr($value, $start, $length);
+        return preg_filter($pattern, "$0", $array);
     }
 
     /**
@@ -14,7 +14,7 @@ class SubString implements Command
      */
     public static function getArity(): int
     {
-        return 3;
+        return 2;
     }
 
     /**
@@ -22,7 +22,7 @@ class SubString implements Command
      */
     public static function getArgumentTypes(): array
     {
-        return [self::TYPE_STRING, self::TYPE_INT, self::TYPE_INT];
+        return [self::TYPE_STRING_ARRAY, self::TYPE_STRING];
     }
 
     /**
@@ -30,6 +30,6 @@ class SubString implements Command
      */
     public static function getReturnType(): string
     {
-        return self::TYPE_STRING;
+        return self::TYPE_STRING_ARRAY;
     }
 }

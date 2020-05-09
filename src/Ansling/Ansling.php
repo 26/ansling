@@ -27,6 +27,7 @@ class Ansling
         'count*' => Command\CountArray::class,
         'fill' => Command\Fill::class,
         'fillint' => Command\FillInt::class,
+        'filter' => Command\Filter::class,
         'flip' => Command\FlipArray::class,
         'if' => Command\IfNotEmpty::class,
         'if*' => Command\IfNotEmptyArray::class,

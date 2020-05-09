@@ -15,7 +15,7 @@ class Regex implements Command
     public static function execute(string $value, string $regex): string
     {
         if(preg_match($regex, $value, $matches) !== false) {
-            return $matches[0];
+            return (string)$matches[0];
         }
 
         throw new AnslingRuntimeException(sprintf(

@@ -36,8 +36,10 @@ Ansling.
    concatenate
    concatenate-array
    chunk
+   chunk-array
    fill
    fillint
+   filter
    flip
    if
    if-array
@@ -46,6 +48,7 @@ Ansling.
    intval
    intval-array
    join
+   join-array
    length
    length-array
    lower
@@ -69,6 +72,7 @@ Ansling.
    rtrimo-array
    sort
    split
+   split-array
    stringval
    stringval-array
    sub
@@ -91,7 +95,6 @@ Ansling.
    :caption: Examples
    :maxdepth: 2
 
-   repeating-text
    replacing-delimiter
    99-bottles-of-beer
 

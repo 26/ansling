@@ -8,7 +8,7 @@ Description
 
 .. code-block:: text
 
-   join `string` glue `array` values : `string`
+   join `string` glue `string array` values : `string`
 
 `join` glues every element in `values` together with `glue` as a delimiter.
 
